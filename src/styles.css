@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.pages a{
+  padding:10px;
+}
+datatable-body-cell{
+  padding:0px 20px;
+  text-align:center;
+}
+datatable-header-cell{
+  text-align:center;
+}

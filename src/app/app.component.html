@@ -1,0 +1,50 @@
+<label for="tableSearch">Live search through table rows: </label>
+<input
+  id="tableSearch"
+  type='text'
+  style='padding:8px;margin:15px auto;width:30%;'
+  placeholder='Search...'
+  (keyup)='updateFilter($event)'
+/>
+
+<ngx-datatable style="height: 700px;"
+  class="bootstrap"
+  [rows]="rows"
+  [columns]="columns"
+  [sortType]="'multi'"
+  [columnMode]="'force'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="50"
+  [scrollbarV]="true">
+  <ngx-datatable-column name="id">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span>
+        {{value}}
+      </span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Name">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span>
+        {{value}}
+      </span>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Description">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span tooltip="{{value}}" title="{{value}}" style="padding:0px 10px">
+        {{value}}
+      </span>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Date">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span >
+        {{value | date:'yyyy-MM-dd HH:mm:ss'}}
+      </span>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
